@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ruta</title>
+</head>
+
+<body
+  style="background-image: url(https://www.thetrainline.com/cmsmedia/cms/9258/france_2x.jpg); font-family: 'Poppins', sans-serif;">
+  <div class="row">
+    <div class="col s12" style="background-color: rgba(0, 0, 0, 0.388);">
+      <h4 class="white-text">Administrador</h4>
+      <div class="card-panel hoverable"
+        style="margin: 100px; background-color: rgba(255, 255, 255, 0.849); border-radius: 10px;">
+        <div class="card-content">
+          <nav style="background-color: #64b5f6;">
+            <div class="nav-wrapper">
+              <div class="col s12">
+                <a href="ruta.html" class="breadcrumb">Ruta</a>
+                <a href="horario.html" class="breadcrumb">Horario</a>
+                <a href="asientos.html" class="breadcrumb">Asientos</a>
+              </div>
+            </div>
+          </nav>
+          <div class="row" style="margin-top:70px;margin-bottom:70px;">
+            <div class="input-field col s12 m4">
+              <select class="browser-default z-depth-3">
+                <option value="" disabled selected>Ciudad de origen</option>
+                <option value="" data-icon="images/sample-1.jpg">Santiago</option>
+                <option value="" data-icon="images/office.jpg">Talca</option>
+                <option value="" data-icon="images/yuna.jpg">Linares</option>
+              </select>
+
+            </div>
+            <div class="input-field col s12 m4 ">
+              <select class="browser-default z-depth-3">
+                <option value="" disabled selected>Ciudad destino</option>
+                <option value="" data-icon="images/sample-1.jpg">Santiago</option>
+                <option value="" data-icon="images/office.jpg">Talca</option>
+                <option value="" data-icon="images/yuna.jpg">Linares</option>
+              </select>
+
+            </div>
+            <div class="input-field col s12 m4">
+              <input type="text" placeholder="Fecha" class="datepicker">
+
+            </div>
+
+          </div>
+          <div>
+             
+            <a href="horario.html" class="btn">Siguiente</a>
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+
+
+
+  </div>
+
+  
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('select');
+      var instances = M.FormSelect.init(elems, options);
+    });
+
+    
+    $(document).ready(function(){
+    $('.datepicker').datepicker();
+  });
+  </script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+
+</html>
