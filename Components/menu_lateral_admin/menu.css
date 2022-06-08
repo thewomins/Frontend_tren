@@ -1,0 +1,36 @@
+html, body {
+    height:100%;
+    margin: 0;
+}
+
+.container{
+    height: 100%;
+    width: 20%;
+    background-color: black;
+}
+
+.boton {
+    display: flex;
+    align-items: center;
+    height: fit-content;
+    height: 7vh;
+    width: 100%;
+    background-color: red;
+}
+
+.inner-boton{
+    margin-left: 5%;
+}
+
+.div-colapsable{
+    display: grid;
+    margin-left: 10%;
+    height: 20vh;
+    width: 90%;
+    background-color: blue;
+}
+
+.boton-colapsable{
+    display: flex;
+    background-color: green;
+}
