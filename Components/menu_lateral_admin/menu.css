@@ -9,7 +9,7 @@ html, body {
     background-color: black;
 }
 
-.boton {
+.boton-menu-colapsable {
     display: flex;
     align-items: center;
     height: fit-content;
@@ -23,11 +23,13 @@ html, body {
 }
 
 .div-colapsable{
-    display: grid;
+    display: none;
     margin-left: 10%;
-    height: 20vh;
+    overflow: hidden;
     width: 90%;
     background-color: blue;
+    max-height:0;
+    transition: max-height 0.4s ease-out;
 }
 
 .boton-colapsable{
