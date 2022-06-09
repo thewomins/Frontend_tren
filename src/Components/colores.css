@@ -1,0 +1,7 @@
+:root{
+    --primary-container : #C2E8FF;
+    --on-primary-16:rgba(255, 255, 255, 0.16);
+    --on-primary-container-16:rgba(0, 30, 44, 0.16);
+    --shadow-box: rgba(0, 0, 0, 0.25);
+    --outline: #71787D;
+   }
