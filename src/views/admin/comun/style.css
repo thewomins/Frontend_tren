@@ -1,0 +1,131 @@
+@import "../../../Components/colores.css";
+
+html, body {
+    margin: 0;
+}
+
+.margin-1{
+    margin:1% 1% 0% 1%;
+}
+
+.border{
+    border: 2px solid var(--outline);
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+}
+
+#menu{
+    z-index: 1;
+    width: 20%;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.funcionabilidad{
+    width: 80%;
+    margin-right: 0;
+    margin-left: auto;
+    background-color: var(--background);
+}
+
+.contenedor-input-admin{
+    min-height: fit-content;
+    margin: 10%;
+}
+
+.contenedor-form-admin{
+    display: flex;
+    flex-direction: column;
+    padding: 2%;
+}
+
+/*input field despues de otro input field
+.input-field-fill + .input-field-fill{
+    margin-top: 1%;
+}*/
+
+.input-field-fill{
+    height: 56px;
+    width: 100%;
+    z-index: 1;
+    background-color: var(--surface-variant);
+    border-radius: 4px 4px 0 0;
+}
+
+.form__field{
+    width: 100%;
+    height: 56px;
+    border: 0;
+    outline: 0;
+    box-sizing: border-box;
+    font-size: 1.3rem;
+    font-family: inherit;
+    padding-left: 10px;
+    padding-top: 15px;
+    background: transparent;
+    transition: border-color 0.2s; 
+}
+
+.form__field:focus{
+    border-bottom: 2px solid var(--primary);
+}
+
+/*si esta en focus y el placeholder no se debe mostrar*/
+.form__field:focus ~ .form__label, .form__field:not(:placeholder-shown) ~ .form__label {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    color: var(--on-surface-variant);
+    transform: translateY(-55px);
+    transition: transform 0.3s;
+}
+
+/*si el input no esta con el focus cambia el color */
+.form__field:not(:focus) ~ .form__label{
+    color: var(--txt-transparent);
+}
+
+/*inicio de el label*/
+.form__label {
+    position: absolute;
+    display: block;
+    margin-left: 1%;
+    transform: translateY(-35px);
+    font-size:1.6vw;
+    color: var(--txt-transparent);
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+
+.boton-form{
+    width: fit-content;
+    padding: 14px 24px 14px 24px;
+    margin-top: 2%;
+    margin-left: auto;
+    margin-right: 2%;
+    font-size: 2.5vw;
+    font-weight: 700;
+    background-color: var(--primary);
+    letter-spacing: 0.02em;
+    color:  var(--on-primary);
+    border: none;
+    border-radius: 15px;
+}
+
+.boton-form:hover{
+    box-shadow: 0px 4px 6px 2px var(--shadow-box);
+    transition: box-shadow 0.2s ease-in;
+}
+
+.contenedor-inputs{
+    display: flex;
+    width: 100%;
+    margin-top: 1%;
+    padding-bottom: 1%;
+    justify-content: space-between;
+    border-radius: 12px;
+}

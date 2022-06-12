@@ -1,0 +1,87 @@
+@import "../colores.css";
+
+
+
+.a-no-style{
+    text-decoration: none;
+    color: inherit;
+}
+
+#container-menu-lateral-admin{
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    box-shadow: 4px 0px 4px var(--shadow-box);
+    background-color: var(--primary-container);
+}
+
+#div-administrador-txt{
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.4vw;
+}
+
+.container-items-menu{
+    height: fit-content;
+    width: 100%;
+}
+
+.boton-menu-colapsable {
+    display: flex;
+    height: 7vh;
+    width: auto;
+    cursor: pointer;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-left: 5%;
+    margin-right: 5%;
+    align-items: center;
+    border-radius: 12px;
+    font-size: 1.5vw;
+}
+
+.icon-expand{
+    min-width: 12px;
+    min-height: 12px;
+    object-fit: contain;
+    transition: transform 0.4s;
+}
+
+.inner-boton{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 5%;
+    margin-right: 5%;
+    width: 100%;
+}
+
+.div-colapsable{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    overflow: hidden;
+    width: 90%;
+    max-height:0;
+    font-size: 1.55vw;
+    opacity: 0;
+    transition: max-height 0.4s ease-in,opacity 0.4s ease-out;
+}
+
+.boton-colapsable{
+    cursor: pointer;
+    display: flex;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    margin-right: 9%;
+    border-radius: 12px;
+}
+.boton-colapsable:active{
+    background-color: var(--on-primary-container-16);
+}
+.boton-colapsable h4{
+    margin-top: 3%;
+    margin-bottom: 3%;
+}

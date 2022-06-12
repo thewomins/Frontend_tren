@@ -1,0 +1,13 @@
+:root{
+    --primary: #00668B;
+    --primary-container : #C2E8FF;
+    --background:#FBFCFF;
+    --on-primary:#FFFFFF;
+    --on-primary-16:rgba(255, 255, 255, 0.16);
+    --on-primary-container-16:rgba(0, 30, 44, 0.16);
+    --surface-variant:#DCE3E9;
+    --on-surface-variant: #41484D;
+    --shadow-box: rgba(0, 0, 0, 0.25);
+    --outline: #71787D;
+    --txt-transparent: rgba(0, 0, 0, 0.3);
+   }
