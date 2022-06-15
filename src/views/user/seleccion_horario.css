@@ -1,0 +1,82 @@
+@import "comun_user.css";
+
+.body{
+    display: flex;
+}
+
+.conteiner-seleccion-horario{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 60%;
+    margin: auto;
+    background-color: var(--primary-container);
+    border-radius: 15px;
+    padding: 1%;
+}
+
+h2{
+    margin-top: 0;
+}
+
+.conteiner-vista-recorrido{
+    border: 1px solid var(--outline);
+    max-height: 95%;
+    margin-left: 3%;
+    width: 40%;
+    border-radius: 15px;
+    background-color: var(--surface);
+}
+
+.conteiner-vista-horario{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+    margin-left: 5%;
+    margin-right: 3%;
+    width: 50%;
+    border-radius: 15px;
+    background-color: var(--surface);
+}
+
+.conteiner-horarios{
+    cursor: pointer;
+    border: 1px solid var(--outline);
+    padding-left: 12px;
+    padding-right: 12px;
+    border-radius: 12px;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    background-color: var(--surface);
+}
+
+.conteiner-horarios:focus{
+    background-color: var(--on-surface-16);
+    transition: background-color 0.2s ease-in;
+}
+
+.boton-select{
+    cursor: pointer;
+    width: fit-content;
+    padding: 14px 24px 14px 24px;
+    margin-left: auto;
+    margin-right: 15%;
+    margin-top: 2%;
+    font-size: 1.2vw;
+    font-weight: 700;
+    background-color: var(--primary);
+    letter-spacing: 0.02em;
+    color:  var(--on-primary);
+    border: none;
+    border-radius: 15px;
+}
+
+.boton-select:hover{
+    box-shadow: 0px 2px 4px 1px var(--shadow-box);
+    transition: box-shadow 0.2s ease-in;
+}
