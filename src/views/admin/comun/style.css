@@ -44,7 +44,7 @@ body{
 }*/
 
 .input-field-fill{
-    height: 56px;
+    height: 4vw;
     width: 100%;
     z-index: 1;
     background-color: var(--surface-variant);
@@ -53,14 +53,14 @@ body{
 
 .form__field{
     width: 100%;
-    height: 56px;
+    height: 4vw;
     border: 0;
     outline: 0;
     box-sizing: border-box;
     font-size: 1.3rem;
     font-family: inherit;
     padding-left: 10px;
-    padding-top: 15px;
+    padding-top: 1.6vw;
     background: transparent;
     transition: border-color 0.2s; 
 }
@@ -75,7 +75,7 @@ body{
     z-index: 2;
     display: block;
     color: var(--on-surface-variant);
-    transform: translateY(-55px);
+    transform: translateY(-3.6vw);
     transition: transform 0.3s;
 }
 
@@ -89,7 +89,7 @@ body{
     position: absolute;
     display: block;
     margin-left: 1%;
-    transform: translateY(-35px);
+    transform: translateY(-2.2vw);
     font-size:1.6vw;
     color: var(--txt-transparent);
     font-weight: 700;
@@ -103,7 +103,7 @@ body{
     margin-top: 2%;
     margin-left: auto;
     margin-right: 2%;
-    font-size: 2.5vw;
+    font-size: 2vw;
     font-weight: 700;
     background-color: var(--primary);
     letter-spacing: 0.02em;
