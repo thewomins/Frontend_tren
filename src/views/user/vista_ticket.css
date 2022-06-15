@@ -1,0 +1,46 @@
+@import "comun_user.css";
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+.conteiner-informacion-ticket{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: auto;
+    border: 1px solid var(--outline);
+    background-color: var(--primary-container);
+    border-radius: 12px;
+    align-items: center;
+}
+
+.info-ticket{
+    align-self: flex-start;
+    margin-left: 10%;
+}
+
+img{
+    min-width: 240px;
+    min-height: 240px;
+    object-fit: contain;
+}
+
+.boton-form{
+    width: fit-content;
+    padding: 14px 24px 14px 24px;
+    font-size: 2vw;
+    margin:2%;
+    font-weight: 700;
+    background-color: var(--primary);
+    letter-spacing: 0.02em;
+    color:  var(--on-primary);
+    border: none;
+    border-radius: 15px;
+}
+
+.boton-form:hover{
+    box-shadow: 0px 4px 6px 2px var(--shadow-box);
+    transition: box-shadow 0.2s ease-in;
+}
