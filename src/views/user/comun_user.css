@@ -1,0 +1,11 @@
+@import "../../Components/colores.css";
+
+h1{
+    margin:4% 8%;
+    font-size: 3vw;
+}
+
+body{
+    min-height: 100vh;
+    background-color: var(--background);
+}

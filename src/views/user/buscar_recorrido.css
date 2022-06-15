@@ -1,8 +1,5 @@
-@import "../../../Components/colores.css";
+@import "comun_user.css";
 
-h1{
-    margin:4% 8%
-}
 
 .buscador{
     display: flex;
@@ -11,26 +8,28 @@ h1{
     margin-right: auto;
     min-height: 56px;
     height: 10vh;
-    background-color: red;
+    background-color: var(--primary-container);
     border-radius: 12px;
     width: 80%;
 }
 
 .buscador-origen-l{
+    display: flex;
     margin-top: 1%;
     margin-left: 1%;
     margin-right: 2px;
     margin-bottom: 1%;
-    background-color: blue;
+    background-color: var(--blanco);
     width: 100%;
     border-radius: 12px 0 0 12px;
 }
 
 .buscador-origen-r{
+    display: flex;
     margin-top: 1%;
     margin-bottom: 1%;
     margin-left: 2px;
-    background-color: green;
+    background-color: var(--blanco);
     width: 100%;
     border-radius: 0 12px 12px 0;
 }
@@ -39,4 +38,18 @@ h1{
     margin: 1%;
     border: none;
     background-color: transparent;
+}
+
+.icon{
+    min-width: 12px;
+    min-height: 12px;
+    object-fit: contain;
+}
+
+.search__label{
+    margin-left: 2%;
+    align-self: center;
+    font-size: 1.8vw;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
