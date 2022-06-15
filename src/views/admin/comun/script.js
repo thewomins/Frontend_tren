@@ -16,7 +16,6 @@ var id=0;
 let menu = document.getElementById("menu");
 menu.innerHTML = template;
 funcionalidad_menu();
-console.log(template);
 
 //iniciar botones
 document.getElementById("boton-less").addEventListener("click",()=>{delete_estaciones_lineas()});
