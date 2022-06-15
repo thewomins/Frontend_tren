@@ -1,11 +1,6 @@
 @import "../../Components/colores.css";
 
 h1{
-    margin:4% 8%;
-    font-size: 3vw;
-}
-
-body{
-    min-height: 100vh;
-    background-color: var(--background);
+    padding: 2% 6%;
+    font-size: 2.5vw;
 }
