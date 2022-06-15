@@ -22,32 +22,27 @@
                 </div>
                 <div class="contenedor-inputs">
                     <div class="input-field-fill margin-1">
-                        <input type="input" class="form__field" placeholder=" " name="Nombre_estacion" id="Nombre_estacion"
+                        <input type="time" class="form__field" placeholder=" " name="Hora_partida" id="Hora_partida"
                             required />
-                        <label for="Nombre_estacion" class="form__label">Nombre de la estacion</label>
+                        <label for="Hora_partida" class="form__label">Hora partida</label>
                     </div>
                     <div class="input-field-fill margin-1">
-                        <input type="input" class="form__field" placeholder=" " name="Nombre_estacion" id="Nombre_estacion"
+                        <input type="time" class="form__field" placeholder=" " name="Hora_llegada" id="Hora_llegada"
                             required />
-                        <label for="Nombre_estacion" class="form__label">Nombre de la estacion</label>
+                        <label for="Hora_llegada" class="form__label">Hora llegada</label>
                     </div>
                     <div class="input-field-fill margin-1">
-                        <input type="input" class="form__field" placeholder=" " name="Nombre_estacion" id="Nombre_estacion"
+                        <input type="input" class="form__field" placeholder=" " name="id_tren" id="id_tren"
                             required />
-                        <label for="Nombre_estacion" class="form__label">Nombre de la estacion</label>
+                        <label for="id_tren" class="form__label">ID tren</label>
                     </div>
                 </div>
-                <div class="contenedor-inputs border">
-                    <div class="input-field-fill margin-1">
-                        <input type="input" class="form__field" placeholder=" " name="Nombre_estacion" id="Nombre_estacion"
-                            required />
-                        <label for="Nombre_estacion" class="form__label">Nombre de la estacion</label>
-                    </div>
-                    <div class="input-field-fill margin-1">
-                        <input type="input" class="form__field" placeholder=" " name="Kilometro_estacion" id="Kilometro_estacion"
-                            required />
-                        <label for="Kilometro_estacion" class="form__label">Kilometro de la estacion</label>
-                    </div>
+                <div id = "contenedor-input-estaciones" class="contenedor-inputs-dynamic border">
+                <!--se añaden los input por js-->
+                </div>
+                <div style="margin-top: 1%; margin-left: auto; margin-right: auto;">
+                    <button id="boton-less" class="boton-more">-</button>
+                    <button id="boton-more" class="boton-more">+</button>
                 </div>
                 <button class="boton-form">Añadir linea</button>
             </div>
