@@ -1,7 +1,7 @@
 
 
 class Tren{
-    constructor(numero_serie,velocidad,asientos){
+    constructor(numero_serie,velocidad){
         this.numero_serie=numero_serie;
         this.velocidad=velocidad;
     }
