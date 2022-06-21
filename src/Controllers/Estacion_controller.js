@@ -1,21 +1,13 @@
 import {Estacion} from "../Models/Estacion.js"
+import {env} from "../Config/env.js"
 
+const endpoint_estacion = env.URL_API+"/estaciones";
+console.log("ingreso_controller")
 
-const endpoint_estacion = "http://127.0.0.1:8000/estaciones";
-
-/*
-fetch("/post/data/here", {
-    method: "POST",
-    headers: {'Content-Type': 'application/json'}, 
-    body: JSON.stringify(data)
-  }).then(res => {
-    console.log("Request complete! response:", res);
-  });
-*/
-console.log("ingreso")
-
-const request = await fetch(endpoint_estacion);
-console.log(request.json())
+async function get_estacion_by_city(nombre_ciudad){
+  let request = await fetch(endpoint_estacion+"-by-city-"+nombre_ciudad);
+  return request.json()
+}
 
 function add_estacion(nombre_estacion,nombre_ciudad){
   let estacion = new Estacion(nombre_estacion,nombre_ciudad)
@@ -35,5 +27,39 @@ function add_estacion(nombre_estacion,nombre_ciudad){
   });
 }
 
-export {add_estacion};
+function update_estacion(nombre_estacion,nombre_ciudad){
+  let estacion = new Estacion(nombre_estacion,nombre_ciudad)
+  fetch(endpoint_estacion+"/put-"+nombre_estacion, {
+    method: 'PUT', 
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(estacion),
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+}
+
+function del_estacion(nombre_estacion){
+  fetch(endpoint_estacion+"/delete-"+nombre_estacion, {
+    method: 'DELETE', 
+    headers: {
+      'Content-Type': 'application/json',
+    }
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log('Success:', data);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });
+}
+
+export {get_estacion_by_city, add_estacion, update_estacion, del_estacion};
 
