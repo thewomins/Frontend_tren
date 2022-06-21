@@ -4,7 +4,6 @@
 <head>
     <link rel="stylesheet" href="comun/style.css" />
     <link rel="stylesheet" href="../../../src/Components/menu_lateral_admin/menu.css" />
-    <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Editar lineas</title>
 </head>
@@ -21,40 +20,27 @@
                         required />
                     <label for="Nombre_linea" class="form__label">Nombre de linea</label>
                 </div>
-                <div class="contenedor-inputs">
-                    <div class="input-field-fill margin-1">
-                        <input type="input" class="form__field" placeholder=" " name="Nombre_estacion" id="Nombre_estacion"
-                            required />
-                        <label for="Nombre_estacion" class="form__label">Nombre de la estacion</label>
-                    </div>
-                    <div class="input-field-fill margin-1">
-                        <input type="input" class="form__field" placeholder=" " name="Nombre_estacion" id="Nombre_estacion"
-                            required />
-                        <label for="Nombre_estacion" class="form__label">Nombre de la estacion</label>
-                    </div>
-                    <div class="input-field-fill margin-1">
-                        <input type="input" class="form__field" placeholder=" " name="Nombre_estacion" id="Nombre_estacion"
-                            required />
-                        <label for="Nombre_estacion" class="form__label">Nombre de la estacion</label>
-                    </div>
+                <div id="contenedor-input-horarios" class="contenedor-inputs-dynamic border">
+                    <!--se añaden los horarios por js-->
                 </div>
-                <div class="contenedor-inputs border">
-                    <div class="input-field-fill margin-1">
-                        <input type="input" class="form__field" placeholder=" " name="Nombre_estacion" id="Nombre_estacion"
-                            required />
-                        <label for="Nombre_estacion" class="form__label">Nombre de la estacion</label>
-                    </div>
-                    <div class="input-field-fill margin-1">
-                        <input type="input" class="form__field" placeholder=" " name="Kilometro_estacion" id="Kilometro_estacion"
-                            required />
-                        <label for="Kilometro_estacion" class="form__label">Kilometro de la estacion</label>
-                    </div>
+                <div style="margin-top: 1%; margin-left: auto; margin-right: auto;">
+                    <button id="boton-less-horario" class="boton-more">-</button>
+                    <button id="boton-more-horario" class="boton-more">+</button>
                 </div>
-                <button class="boton-form">Editar linea</button>
+                <div id = "contenedor-input-estaciones" class="contenedor-inputs-dynamic border">
+                <!--se añaden los input por js-->
+                </div>
+                <div style="margin-top: 1%; margin-left: auto; margin-right: auto;">
+                    <button id="boton-less-estacion" class="boton-more">-</button>
+                    <button id="boton-more-estacion" class="boton-more">+</button>
+                </div>
+                <button id="boton-put" class="boton-form">Editar linea</button>
             </div>
         </div>
     </div>
    
 </body>
 <script type="module" src="comun/script.js"></script>
+<script type="module" src="scripts/linea.js"></script>
+<script type="module" src="scripts/crud_linea.js"></script>
 </html>
