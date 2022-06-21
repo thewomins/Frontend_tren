@@ -9,15 +9,19 @@
 <body>
     <h1>Nombre pagina</h1>
     <div class="buscador">
+        
         <div class="buscador-origen-l">
-            <label class="search__label">Ciudad origen</label>
+            <input type="input" class="form__field" placeholder=" " name="Ciudad_origen" id='Ciudad_origen' required />
+            <label for="Ciudad_origen" class="search__label">Ciudad origen</label>
         </div>
 
         <div class="buscador-origen-r">
-            <label class="search__label">Ciudad destino</label>
+            <input type="input" class="form__field" placeholder=" " name="Ciudad_destino" id='Ciudad_destino' required />
+            <label for="Ciudad_destino" class="search__label">Ciudad destino</label>
         </div>
-        <button class="buscador-boton">
+        <button id="search" class="buscador-boton">
             <img class="icon" src="../../../icons/search.svg"></img>
         </button>
     </div>
+    <script type="module" src="scripts/buscar_recorrido.js"></script>
 </body>
