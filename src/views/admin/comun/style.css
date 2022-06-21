@@ -133,16 +133,6 @@ body{
     transition: box-shadow 0.2s ease-in;
 }
 
-.contenedor-inputs{
-    display: flex;
-    width: 100%;
-    margin-top: 1%;
-    padding-bottom: 1%;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 12px;
-}
-
 .contenedor-inputs-dynamic{
     display: flex;
     flex-direction: column;
