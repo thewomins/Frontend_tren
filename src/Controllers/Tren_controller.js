@@ -8,6 +8,11 @@ console.log("ingreso_tren")
 const request = await fetch(endpoint_estacion);
 console.log(request.json())*/
 
+async function get_tren(id_tren){
+  const request = await fetch(endpoint_tren+"-"+id_tren);
+  return request.json()
+}
+
 function add_tren(numero_serie,velocidad,asientos){
   let tren = new Tren(numero_serie,velocidad)
   tren.asignar_asientos(asientos)
@@ -63,4 +68,4 @@ function del_tren(numero_serie){
   });
 }
 
-export {add_tren, update_tren, del_tren};
+export {get_tren, add_tren, update_tren, del_tren};
