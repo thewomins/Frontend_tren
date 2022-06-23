@@ -9,26 +9,19 @@
 <body>
     <h1>Nombre pagina</h1>
     <div class="conteiner-seleccion-horario">
-        <h2>[Ciudad origen - Ciudad destino]</h2>
+        <h2 id="viaje">[Ciudad origen - Ciudad destino]</h2>
         <div style="height:90%; margin: 1%; display:flex; flex-direction: row;">
-            <div class="conteiner-vista-recorrido">
+            <div id="vista-recorrido" class="conteiner-vista-recorrido">
                 
             </div>
             <div class="conteiner-vista-horario">
-                <h2>Horarios disponibles</h2>
-                <div>
-                    <div class="conteiner-horarios">
-                        <p> Salida [8:30] - Llegada [10:30]</p>
-                    </div>
-                    <div class="conteiner-horarios">
-                        <p> Salida [8:30] - Llegada [10:30]</p>
-                    </div>
-                    <div class="conteiner-horarios">
-                        <p> Salida [8:30] - Llegada [10:30]</p>
-                    </div>
+                <h2 style="margin-bottom: 0;">Lineas disponibles</h2>
+                <div id="container-linea">
                 </div>
-                <button class="boton-select">Seleccionar</button>
+                <button id="boton-form" class="boton-select">Seleccionar</button>
             </div>
         </div>
     </div>
+
+<script type="module" src="scripts/seleccion_horario.js"></script>
 </body>
