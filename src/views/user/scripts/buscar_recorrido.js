@@ -14,6 +14,7 @@ async function onclick_search(){
     let destino = document.getElementById("Ciudad_destino")
     const selectedDate = new Date(datePicker.value);
     const today = new Date();
+    console.log("clic")
     today.setUTCHours(0,0,0,0);
     if(origen.value === ""){
         origen.setCustomValidity("No puede ser vacio");
@@ -29,14 +30,16 @@ async function onclick_search(){
         return}
     let fecha=[selectedDate.getDate()+1,(selectedDate.getMonth()+1),selectedDate.getFullYear()].join("-")
     let destino_estacion = (await get_estacion_by_city(destino.value)).nombre
+    let origen_estacion = (await get_estacion_by_city(origen.value)).nombre
     let array_final=[]
-    let lista_origen= await get_linea_by_estacion( (await get_estacion_by_city(origen.value)).nombre)
+    let lista_origen= await get_linea_by_estacion( await origen_estacion)
     lista_origen.forEach(element => {
         if(element.estaciones.filter(e => e.nombre === destino_estacion).length > 0){
         array_final.push(element);}
     });
-    localStorage.setItem("lineas", JSON.stringify(array_final));
+    sessionStorage.setItem("lineas", JSON.stringify(array_final));
     sessionStorage.setItem("fecha",fecha)
+    sessionStorage.setItem("viaje",JSON.stringify({"origen":origen_estacion,"destino":destino_estacion}))
     window.location.href = "seleccion_horario.html?"+"origen="+origen.value+"&destino="+destino.value;
 }
 
