@@ -21,7 +21,7 @@ body{
     margin-left: 10%;
 }
 
-img{
+#img{
     min-width: 240px;
     min-height: 240px;
     object-fit: contain;
