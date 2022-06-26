@@ -1,3 +1,5 @@
+import { add_recorrido, get_recorrido } from "../../../Controllers/Recorrido_controller.js";
+
 const template_horario=`
     <div class="conteiner-horarios">
         <p> Salida [8:30] - Llegada [10:30]</p>
@@ -6,7 +8,7 @@ const template_horario=`
 
 document.getElementById("viaje").innerText=getUrlVars().origen+" - "+getUrlVars().destino
 
-var lineas = JSON.parse(localStorage.getItem("lineas") || "[]");
+var lineas = JSON.parse(sessionStorage.getItem("lineas") || "[]");
 
 lineas.forEach(element=>{add_lineas(element.nombre_linea,element.horarios);add_lineas("linea 1",element.horarios)})
 
@@ -80,10 +82,30 @@ function show_rute(nombre_linea){
 
 document.getElementById("boton-form").addEventListener("click",e=>{on_click_enviar()});
 
-function on_click_enviar(){
+async function on_click_enviar(){
     if(SELECCION===""){
         return
     }
-    localStorage.setItem("horario", SELECCION);
+    sessionStorage.setItem("horario", SELECCION);
+    await create_recorrido()
     window.location.href = "seleccion_asiento.html?"+SELECCION;
+}
+
+//lee o genera recorrido
+
+async function create_recorrido(){
+    let horario = JSON.parse(localStorage.getItem("horario") || "[]");
+    let fecha = sessionStorage.getItem("fecha");
+    let linea_seleccionada = (lineas.find(e=>e.nombre_linea===horario.nombre_linea)).horarios.find(e=>e.Hora_llegada===horario.Llegada)
+    let id = horario.nombre_linea+fecha+horario.Salida
+    sessionStorage.setItem("id_ruta", id);
+    let consulta = await get_recorrido(id)
+    if(await consulta===""){
+        //crea
+        console.warn("entro")
+        await add_recorrido(id,fecha,horario.nombre_linea,horario.Salida,horario.Llegada,linea_seleccionada.id_tren)
+        return false
+    }
+    //return
+    return consulta.data
 }
