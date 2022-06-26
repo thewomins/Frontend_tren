@@ -9,21 +9,27 @@
 <body>
     <h1>Nombre pagina</h1>
     <div class="conteiner">
-        <div class="seleccion_asiento">
+        <div id="canvas-tren" class="seleccion_asiento">
         </div>
         <div class="conteiner-detalles_asiento">
             <h3>Detalles</h3>
             <div class="detalles-asiento">
                 <h4>Asiento n°</h4>
-                <h4 style="margin-left:6%">[24]</h4>
+                <h4 id="numero_asiento" style="margin-left:6%">[24]</h4>
                 <h4>Precio</h4>
-                <h4 style="margin-left:6%">[$2500]</h4>
+                <h4 id="precio_ticket" style="margin-left:6%">[$2500]</h4>
                 <h4>Hora salida</h4>
-                <h4 style="margin-left:6%">[8:30]</h4>
+                <h4 id="hora_salida" style="margin-left:6%">[8:30]</h4>
                 <h4>Hora llegada</h4>
-                <h4 style="margin-left:6%">[10:30]</h4>
+                <h4 id="hora_llegada" style="margin-left:6%">[10:30]</h4>
             </div>
-            <button class="boton-comprar">Comprar pasaje</button>
+            <button id="boton-form" class="boton-comprar">Comprar pasaje</button>
         </div>
     </div>
+    <svg id="asiento-icon" width="25" height="30" viewBox="0 0 128 128" fill="currentColor" xmlns="http://www.w3.org/2000/svg" style="color:green;display:none">
+        <rect x="82" width="37" height="128" rx="12" fill="currentColor"/>
+        <path d="M9 52C9 29.9086 26.9086 12 49 12H82V118H49C26.9086 118 9 100.091 9 78V52Z" fill="currentColor"/>
+    </svg>
+
+    <script type="module" src="scripts/seleccion_asiento.js" ></script>
 </body>
