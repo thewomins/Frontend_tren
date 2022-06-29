@@ -10,7 +10,7 @@ document.getElementById("viaje").innerText=getUrlVars().origen+" - "+getUrlVars(
 
 var lineas = JSON.parse(sessionStorage.getItem("lineas") || "[]");
 
-lineas.forEach(element=>{add_lineas(element.nombre_linea,element.horarios);add_lineas("linea 1",element.horarios)})
+lineas.forEach(element=>{add_lineas(element.nombre_linea,element.horarios)})
 
 
 function getUrlVars() {
@@ -94,7 +94,7 @@ async function on_click_enviar(){
 //lee o genera recorrido
 
 async function create_recorrido(){
-    let horario = JSON.parse(localStorage.getItem("horario") || "[]");
+    let horario = JSON.parse(sessionStorage.getItem("horario") || "[]");
     let fecha = sessionStorage.getItem("fecha");
     let linea_seleccionada = (lineas.find(e=>e.nombre_linea===horario.nombre_linea)).horarios.find(e=>e.Hora_llegada===horario.Llegada)
     let id = horario.nombre_linea+fecha+horario.Salida
