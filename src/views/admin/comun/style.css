@@ -143,26 +143,3 @@ body{
     align-items: center;
     border-radius: 12px;
 }
-
-/*login*/
-
-.contenedor-login{
-    display: flex;
-    flex-direction: column;
-    background-color: var(--primary-container);
-    border: 1px solid var(--outline);
-    height: fit-content;
-    margin: auto;
-    padding: 5%;
-    min-width: 25%;
-    border-radius: 15px;
-}
-
-.contenedor-login h1{
-    align-self: center;
-    margin-top: 0;
-}
-
-#iniciar_sesion{
-    margin: 10% auto 0 auto;
-}
