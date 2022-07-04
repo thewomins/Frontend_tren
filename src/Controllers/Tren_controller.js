@@ -40,6 +40,7 @@ function update_tren(numero_serie,velocidad,asientos){
   fetch(endpoint_tren+"/put-"+numero_serie, {
     method: 'PUT',
     headers: {
+      'Authorization':env.TOKEN,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(tren),
@@ -57,6 +58,7 @@ function del_tren(numero_serie){
   fetch(endpoint_tren+"/delete-"+numero_serie, {
     method: 'DELETE',
     headers: {
+      'Authorization':env.TOKEN,
       'Content-Type': 'application/json',
     }
   })
