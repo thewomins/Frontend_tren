@@ -19,6 +19,7 @@ function add_tren(numero_serie,velocidad,asientos){
   fetch(endpoint_tren+"/post", {
     method: 'POST',
     headers: {
+      'Authorization':env.TOKEN,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(tren),

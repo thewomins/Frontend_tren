@@ -14,6 +14,7 @@ function add_estacion(nombre_estacion,nombre_ciudad){
   fetch(endpoint_estacion+"/post", {
     method: 'POST', // or 'PUT'
     headers: {
+      'Authorization':env.TOKEN,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(estacion),
@@ -32,6 +33,7 @@ function update_estacion(nombre_estacion,nombre_ciudad){
   fetch(endpoint_estacion+"/put-"+nombre_estacion, {
     method: 'PUT', 
     headers: {
+      'Authorization':env.TOKEN,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(estacion),
@@ -49,6 +51,7 @@ function del_estacion(nombre_estacion){
   fetch(endpoint_estacion+"/delete-"+nombre_estacion, {
     method: 'DELETE', 
     headers: {
+      'Authorization':env.TOKEN,
       'Content-Type': 'application/json',
     }
   })

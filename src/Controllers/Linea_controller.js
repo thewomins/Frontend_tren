@@ -17,6 +17,7 @@ function add_linea(nombre_linea,estaciones_list,horarios_list){
   fetch(endpoint_linea+"/post", {
     method: 'POST', 
     headers: {
+      'Authorization':env.TOKEN,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(linea),
@@ -36,6 +37,7 @@ function update_linea(nombre_linea,estaciones_list,horarios_list){
   fetch(endpoint_linea+"/put-"+nombre_linea, {
     method: 'PUT', 
     headers: {
+      'Authorization':env.TOKEN,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(linea),
@@ -53,6 +55,7 @@ function delete_linea(nombre_linea){
   fetch(endpoint_linea+"/delete-"+nombre_linea, {
     method: 'DELETE', 
     headers: {
+      'Authorization':env.TOKEN,
       'Content-Type': 'application/json',
     }
   })
