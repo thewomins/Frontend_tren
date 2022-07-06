@@ -3,6 +3,8 @@ import {env} from "../Config/env.js"
 
 const endpoint_estacion = env.URL_API+"/estaciones";
 console.log("ingreso_controller")
+let TOKEN=sessionStorage.getItem("token")
+console.log(TOKEN)
 
 async function get_estacion_by_city(nombre_ciudad){
   let request = await fetch(endpoint_estacion+"-by-city-"+nombre_ciudad);
@@ -11,10 +13,11 @@ async function get_estacion_by_city(nombre_ciudad){
 
 function add_estacion(nombre_estacion,nombre_ciudad){
   let estacion = new Estacion(nombre_estacion,nombre_ciudad)
+  console.log(TOKEN)
   fetch(endpoint_estacion+"/post", {
     method: 'POST', // or 'PUT'
     headers: {
-      'Authorization':env.TOKEN,
+      'Authorization':TOKEN,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(estacion),
