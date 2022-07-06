@@ -2,8 +2,10 @@ import {Tren} from "../Models/Tren.js"
 import {env} from "../Config/env.js"
 
 const endpoint_tren = env.URL_API+"/tren";
-
 console.log("ingreso_tren")
+let TOKEN=sessionStorage.getItem("token")
+console.log(TOKEN)
+
 /*
 const request = await fetch(endpoint_estacion);
 console.log(request.json())*/
@@ -13,62 +15,53 @@ async function get_tren(id_tren){
   return request.json()
 }
 
-function add_tren(numero_serie,velocidad,asientos){
+async function add_tren(numero_serie,velocidad,asientos){
   let tren = new Tren(numero_serie,velocidad)
   tren.asignar_asientos(asientos)
-  fetch(endpoint_tren+"/post", {
+  let request = await fetch(endpoint_tren+"/post", {
     method: 'POST',
     headers: {
-      'Authorization':env.TOKEN,
+      'Authorization':TOKEN,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(tren),
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
   .catch((error) => {
     console.error('Error:', error);
   });
+  return request
 }
 
 
-function update_tren(numero_serie,velocidad,asientos){
+async function update_tren(numero_serie,velocidad,asientos){
   let tren = new Tren(numero_serie,velocidad)
   tren.asignar_asientos(asientos)
-  fetch(endpoint_tren+"/put-"+numero_serie, {
+  let request = await fetch(endpoint_tren+"/put-"+numero_serie, {
     method: 'PUT',
     headers: {
-      'Authorization':env.TOKEN,
+      'Authorization':TOKEN,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(tren),
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
   .catch((error) => {
     console.error('Error:', error);
   });
+  return request
 }
 
-function del_tren(numero_serie){
-  fetch(endpoint_tren+"/delete-"+numero_serie, {
+async function del_tren(numero_serie){
+  let request = await fetch(endpoint_tren+"/delete-"+numero_serie, {
     method: 'DELETE',
     headers: {
-      'Authorization':env.TOKEN,
+      'Authorization':TOKEN,
       'Content-Type': 'application/json',
     }
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
   .catch((error) => {
     console.error('Error:', error);
   });
+  return request
 }
 
 export {get_tren, add_tren, update_tren, del_tren};

@@ -12,7 +12,7 @@
 <body>
     <div id="menu">
     </div>
-    <div class="funcionabilidad">
+    <form id="form_anadir_tren" class="funcionabilidad">
         <div class="contenedor-input-admin">
             <h1>Añadir Tren</h1>
             <div class="contenedor-form-admin">
@@ -28,11 +28,10 @@
                     <input type="number" class="form__field" placeholder=" " name="Asientos" id='Asientos' required />
                     <label for="Asientos" class="form__label">Asientos</label>
                 </div>
-                <button id="boton-post" class="boton-form">Añadir tren</button>
+                <button type="submit" id="boton-post" class="boton-form">Añadir tren</button>
             </div>
         </div>
-    </div>
-    </div>
+    </form>
     <script type="module" src="comun/script.js"></script>
     <script type="module" src="scripts/trenes.js"></script>
 </body>

@@ -33,7 +33,7 @@ async function update_estacion(nombre_estacion,nombre_ciudad){
   let request = await fetch(endpoint_estacion+"/put-"+nombre_estacion, {
     method: 'PUT', 
     headers: {
-      'Authorization':env.TOKEN,
+      'Authorization':TOKEN,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(estacion),
@@ -48,7 +48,7 @@ async function del_estacion(nombre_estacion){
   let request = await fetch(endpoint_estacion+"/delete-"+nombre_estacion, {
     method: 'DELETE', 
     headers: {
-      'Authorization':env.TOKEN,
+      'Authorization':TOKEN,
       'Content-Type': 'application/json',
     }
   })

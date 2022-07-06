@@ -1,15 +1,15 @@
 import {add_linea, update_linea, delete_linea} from "../../../Controllers/Linea_controller.js";
 
 try{
-document.getElementById("boton-post").addEventListener("click", () => {post_linea();});
+document.getElementById("form_anadir_linea").onsubmit = e=>{e.preventDefault();post_linea();};
 }catch (error){}
 
 try{
-    document.getElementById("boton-put").addEventListener("click", () => {put_linea();});
+    document.getElementById("form_editar_linea").onsubmit = e=>{e.preventDefault();put_linea();};
 }catch (error){}
 
 try{
-    document.getElementById("boton-delete").addEventListener("click", () => {del_linea();});
+    document.getElementById("form_delete_linea").onsubmit = e=>{e.preventDefault();del_linea();};
 }catch (error){}
 
 function obtener_list_div(div){
@@ -26,7 +26,7 @@ function obtener_list_div(div){
     return array;
 }
 
-function post_linea() {
+async function post_linea() {
     console.log("click");
     let nombre_linea = document.getElementById("Nombre_linea").value;
     let list_horario = obtener_list_div(document.getElementById("contenedor-input-horarios"))
@@ -37,10 +37,11 @@ function post_linea() {
         return;
     }
     //console.log(nombre_linea); 
-    add_linea(nombre_linea, list_horario, list_estaciones);
+    let request= await add_linea(nombre_linea, list_horario, list_estaciones);
+    window.alert(request.status+" - "+request.statusText)
 }
 
-function put_linea() {
+async function put_linea() {
     console.log("click");
     let nombre_linea = document.getElementById("Nombre_linea").value;
     let list_horario = obtener_list_div(document.getElementById("contenedor-input-horarios"))
@@ -51,15 +52,17 @@ function put_linea() {
     console.log(list_horario)
     console.log(list_estaciones)
     console.log(nombre_linea); 
-    update_linea(nombre_linea, list_horario, list_estaciones)
+    let request= await update_linea(nombre_linea, list_horario, list_estaciones)
+    window.alert(request.status+" - "+request.statusText)
 }
 
-function del_linea() {
+async function del_linea() {
     console.log("click_del");
     let nombre_linea = document.getElementById("Nombre_linea").value;
     if (nombre_linea === "") {
         return;
     }
     console.log(nombre_linea); 
-    delete_linea(nombre_linea)
+    let request= await delete_linea(nombre_linea)
+    window.alert(request.status+" - "+request.statusText)
 }

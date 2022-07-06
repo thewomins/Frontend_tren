@@ -2,7 +2,8 @@ import {Linea} from "../Models/Linea.js"
 import {env} from "../Config/env.js"
 
 const endpoint_linea = env.URL_API+"/linea";
-
+let TOKEN=sessionStorage.getItem("token")
+console.log(TOKEN)
 
 console.log("ingreso_linea")
 
@@ -11,61 +12,52 @@ async function get_linea_by_estacion(nombre_estacion){
   return request.json()
 }
 
-function add_linea(nombre_linea,estaciones_list,horarios_list){
+async function add_linea(nombre_linea,estaciones_list,horarios_list){
   let linea = new Linea(nombre_linea,estaciones_list,horarios_list)
   console.log(JSON.stringify(linea))
-  fetch(endpoint_linea+"/post", {
+  let request = await fetch(endpoint_linea+"/post", {
     method: 'POST', 
     headers: {
-      'Authorization':env.TOKEN,
+      'Authorization':TOKEN,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(linea),
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
   .catch((error) => {
     console.error('Error:', error);
   });
+  return request
 }
 
-function update_linea(nombre_linea,estaciones_list,horarios_list){
+async function update_linea(nombre_linea,estaciones_list,horarios_list){
   let linea = new Linea(nombre_linea,estaciones_list,horarios_list)
   console.log(JSON.stringify(linea))
-  fetch(endpoint_linea+"/put-"+nombre_linea, {
+  let request = await fetch(endpoint_linea+"/put-"+nombre_linea, {
     method: 'PUT', 
     headers: {
-      'Authorization':env.TOKEN,
+      'Authorization':TOKEN,
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(linea),
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
   .catch((error) => {
     console.error('Error:', error);
   });
+  return request
 }
 
-function delete_linea(nombre_linea){
-  fetch(endpoint_linea+"/delete-"+nombre_linea, {
+async function delete_linea(nombre_linea){
+  let request = await fetch(endpoint_linea+"/delete-"+nombre_linea, {
     method: 'DELETE', 
     headers: {
-      'Authorization':env.TOKEN,
+      'Authorization':TOKEN,
       'Content-Type': 'application/json',
     }
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
   .catch((error) => {
     console.error('Error:', error);
   });
+  return request
 }
 
 export {get_linea_by_estacion, add_linea, update_linea, delete_linea};
