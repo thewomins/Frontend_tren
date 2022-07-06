@@ -1,5 +1,4 @@
 import {auth_admin} from "../../../Controllers/Auth_controller.js"
-import {env} from "../../../Config/env.js"
 
 console.log("entro")
 

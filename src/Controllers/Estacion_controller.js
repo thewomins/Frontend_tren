@@ -11,10 +11,10 @@ async function get_estacion_by_city(nombre_ciudad){
   return request.json()
 }
 
-function add_estacion(nombre_estacion,nombre_ciudad){
+async function add_estacion(nombre_estacion,nombre_ciudad){
   let estacion = new Estacion(nombre_estacion,nombre_ciudad)
   console.log(TOKEN)
-  fetch(endpoint_estacion+"/post", {
+  let request = await fetch(endpoint_estacion+"/post", {
     method: 'POST', // or 'PUT'
     headers: {
       'Authorization':TOKEN,
@@ -22,18 +22,15 @@ function add_estacion(nombre_estacion,nombre_ciudad){
     },
     body: JSON.stringify(estacion),
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
   .catch((error) => {
     console.error('Error:', error);
   });
+  return request
 }
 
-function update_estacion(nombre_estacion,nombre_ciudad){
+async function update_estacion(nombre_estacion,nombre_ciudad){
   let estacion = new Estacion(nombre_estacion,nombre_ciudad)
-  fetch(endpoint_estacion+"/put-"+nombre_estacion, {
+  let request = await fetch(endpoint_estacion+"/put-"+nombre_estacion, {
     method: 'PUT', 
     headers: {
       'Authorization':env.TOKEN,
@@ -41,30 +38,24 @@ function update_estacion(nombre_estacion,nombre_ciudad){
     },
     body: JSON.stringify(estacion),
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
   .catch((error) => {
     console.error('Error:', error);
   });
+  return request
 }
 
-function del_estacion(nombre_estacion){
-  fetch(endpoint_estacion+"/delete-"+nombre_estacion, {
+async function del_estacion(nombre_estacion){
+  let request = await fetch(endpoint_estacion+"/delete-"+nombre_estacion, {
     method: 'DELETE', 
     headers: {
       'Authorization':env.TOKEN,
       'Content-Type': 'application/json',
     }
   })
-  .then(response => response.json())
-  .then(data => {
-    console.log('Success:', data);
-  })
   .catch((error) => {
     console.error('Error:', error);
   });
+  return request
 }
 
 export {get_estacion_by_city, add_estacion, update_estacion, del_estacion};
