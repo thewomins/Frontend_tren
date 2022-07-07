@@ -1,4 +1,4 @@
-import {get_qr_ticket, get_ticket_by_id_recorrtido_y_asiento } from "../../../Controllers/Ticket_controller.js";
+import {get_qr_ticket, get_ticket_by_id_recorrtido_y_asiento } from "../../../src/Controllers/Ticket_controller.js";
 
 var datos = JSON.parse(sessionStorage.getItem("pasaje") || "[]");
 

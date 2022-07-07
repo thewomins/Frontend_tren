@@ -1,4 +1,4 @@
-import {add_tren, update_tren, del_tren} from "../../../Controllers/Tren_controller.js" ;
+import {add_tren, update_tren, del_tren} from "../../../src/Controllers/Tren_controller.js" ;
 
 try{
     document.getElementById("form_anadir_tren").onsubmit = e=>{e.preventDefault();post_tren()};

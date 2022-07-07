@@ -1,4 +1,4 @@
-import {add_linea, update_linea, delete_linea} from "../../../Controllers/Linea_controller.js";
+import {add_linea, update_linea, delete_linea} from "../../../src/Controllers/Linea_controller.js";
 
 try{
 document.getElementById("form_anadir_linea").onsubmit = e=>{e.preventDefault();post_linea();};

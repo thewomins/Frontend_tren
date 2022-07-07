@@ -1,5 +1,5 @@
-import {actualizar_recorrido,get_recorrido} from "../../../Controllers/Recorrido_controller.js"
-import { add_ticket} from "../../../Controllers/Ticket_controller.js"
+import {actualizar_recorrido,get_recorrido} from "../../../src/Controllers/Recorrido_controller.js"
+import { add_ticket} from "../../../src/Controllers/Ticket_controller.js"
 
 /*
 *   hacerlo con entidad tren luego se cambia de recorrido

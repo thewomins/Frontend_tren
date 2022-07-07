@@ -1,4 +1,4 @@
-import { add_recorrido, get_recorrido } from "../../../Controllers/Recorrido_controller.js";
+import { add_recorrido, get_recorrido } from "../../../src/Controllers/Recorrido_controller.js";
 
 const template_horario=`
     <div class="conteiner-horarios">

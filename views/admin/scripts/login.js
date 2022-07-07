@@ -1,4 +1,4 @@
-import {auth_admin} from "../../../Controllers/Auth_controller.js"
+import {auth_admin} from "../../../src/Controllers/Auth_controller.js"
 
 console.log("entro")
 
@@ -10,5 +10,5 @@ document.getElementById("iniciar_sesion").addEventListener("click",e=>onclick_in
 async function onclick_iniciar_sesion(){
     let request = await auth_admin(email.value,password.value)
     sessionStorage.setItem("token","Bearer "+request.token)
-    window.location.href = "/src/views/admin/añadir_estacion.html";
+    window.location.href = "/views/admin/añadir_estacion.html";
 }

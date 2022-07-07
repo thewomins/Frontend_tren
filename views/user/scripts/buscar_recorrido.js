@@ -1,5 +1,5 @@
-import {get_estacion_by_city} from "../../../Controllers/Estacion_controller.js"
-import {get_linea_by_estacion} from "../../../Controllers/Linea_controller.js"
+import {get_estacion_by_city} from "../../../src/Controllers/Estacion_controller.js"
+import {get_linea_by_estacion} from "../../../src/Controllers/Linea_controller.js"
 
 
 document.getElementById("search")
@@ -40,6 +40,6 @@ async function onclick_search(){
     sessionStorage.setItem("lineas", JSON.stringify(array_final));
     sessionStorage.setItem("fecha",fecha)
     sessionStorage.setItem("viaje",JSON.stringify({"origen":origen_estacion,"destino":destino_estacion}))
-    window.location.href = "seleccion_horario.html?"+"origen="+origen.value+"&destino="+destino.value;
+    window.location.href = "views/user/seleccion_horario.html?"+"origen="+origen.value+"&destino="+destino.value;
 }
 

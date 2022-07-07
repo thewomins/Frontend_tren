@@ -1,4 +1,4 @@
-import {add_estacion, update_estacion, del_estacion} from "../../../Controllers/Estacion_controller.js" ;
+import {add_estacion, update_estacion, del_estacion} from "../../../src/Controllers/Estacion_controller.js" ;
 
 try{
     document.getElementById("form_anadir_estacion").onsubmit = e=>{e.preventDefault();post_estacion()};
