@@ -58,24 +58,6 @@ const template = `
                 <a class="a-no-style" href="../../views/admin/eliminar_lineas.html" ><h4>Eliminar lineas</h4></a>
             </div>
         </div>
-        <!-- Siguiente item en menu-->
-        <div class="boton-menu-colapsable">
-            <div class="inner-boton">
-                <h2>Recorridos</h2>
-                <img class="icon-expand" src="../../../icons/arrow_expand.svg"></img>
-            </div>
-        </div>
-        <div class="div-colapsable">
-            <div class="boton-colapsable">
-                <a class="a-no-style" href="../../views/admin/añadir_recorridos.html" ><h4>Añadir recorridos</h4></a>
-            </div>
-            <div class="boton-colapsable">
-                <a class="a-no-style" href="../../views/admin/editar_recorridos.html" ><h4>Editar recorridos</h4></a>
-            </div>
-            <div class="boton-colapsable">
-                <a class="a-no-style" href="../../views/admin/eliminar_recorridos.html" ><h4>Eliminar recorridos</h4></a>
-            </div>
-        </div>
     </div>
 </div>
 `;

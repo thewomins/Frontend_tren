@@ -1,7 +1,6 @@
 import { Admin } from "../Models/Admin.js"
 import {env} from "../Config/env.js"
 
-
 const endpoint_admin = env.URL_API+"/admin";
 
 console.log("ingreso_controller",endpoint_admin)
@@ -18,4 +17,15 @@ async function auth_admin(email, password){
   return await request.json()
 }
 
-export {auth_admin}
+async function is_Auth(token){
+  let request = await fetch(endpoint_admin+"/is-auth-"+token, {
+      method: 'GET', // or 'PUT'
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+  console.log(request)
+  return await request.json()
+}
+
+export {auth_admin, is_Auth}
