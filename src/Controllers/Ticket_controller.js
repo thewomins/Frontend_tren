@@ -24,10 +24,10 @@ async function get_qr_ticket(id_ticket){
     return request
 }
 
-function add_ticket(id_recorrido,estacion_inicio,estacion_destino,numero_asiento,valor){
+async function add_ticket(id_recorrido,estacion_inicio,estacion_destino,numero_asiento,valor){
   let ticket = new Ticket("cambiar",id_recorrido,estacion_inicio,estacion_destino,numero_asiento,valor)
   console.log(ticket)
-  fetch(endpoint_ticket+"/post", {
+  await fetch(endpoint_ticket+"/post", {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
