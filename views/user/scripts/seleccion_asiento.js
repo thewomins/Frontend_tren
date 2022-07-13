@@ -16,7 +16,7 @@ const icon_asiento = document.getElementById("asiento-icon")
 
 let asiento_txt = document.getElementById("numero_asiento")
 asiento_txt.textContent = "seleccione asiento"
-document.getElementById("precio_ticket").textContent = 2300
+document.getElementById("precio_ticket").textContent = 3500
 document.getElementById("hora_salida").textContent = datos.Salida
 document.getElementById("hora_llegada").textContent = datos.Llegada
 document.getElementById("boton-form").addEventListener("click",e=>{on_click_compra()})
@@ -144,11 +144,11 @@ async function on_click_compra(){
     }
 }
 
-function genera_ticket(){
+async function genera_ticket(){
     if(FLOW === true){return}
     let datos=JSON.parse(sessionStorage.getItem("pasaje") || "[]");
     let viaje=JSON.parse(sessionStorage.getItem("viaje") || "[]");
-    add_ticket(datos.id_recorrido,viaje.origen,viaje.destino,datos.asiento,datos.precio)
+    await add_ticket(datos.id_recorrido,viaje.origen,viaje.destino,datos.asiento,datos.precio)
 }
 
 
