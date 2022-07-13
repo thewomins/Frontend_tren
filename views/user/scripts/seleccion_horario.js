@@ -29,12 +29,10 @@ function add_lineas(nombre_linea,list_horarios){
     nombre_linea_p.style="font-size: 2vw; margin-top:0;margin-bottom:1vw;"
     nombre_linea_p.textContent=nombre_linea
     contenedor_hijo.appendChild(nombre_linea_p)
-    let i = 0;
     list_horarios.forEach(element => {
         let contenedor_horarios = document.createElement("div")
         contenedor_horarios.innerHTML=template_horario
-        contenedor_horarios.id=nombre_linea+"-"+i
-        i++
+        contenedor_horarios.id=nombre_linea
         contenedor_horarios.addEventListener("click",e=>{on_click_horario(contenedor_horarios)})
         let text_format="Salida: "+element.Hora_salida + " - Llegada: "+element.Hora_llegada
         contenedor_horarios.querySelector("p").textContent= text_format
@@ -61,17 +59,18 @@ function on_click_horario(self){
     console.info(STACK_HORARIO.length)
     self.querySelector("div").style="background-color:red;transition:background-color 0.3s"
     let txt ='{"'+STACK_HORARIO[0].querySelector("p").textContent.replace(' - ','","').replaceAll(': ','" : "')
-    SELECCION=(txt+'","nombre_linea":"'+STACK_HORARIO[0].id.split("-")[0]+'"}')
-    show_rute(STACK_HORARIO[0].id.split("-")[0])
+    SELECCION=(txt+'","nombre_linea":"'+STACK_HORARIO[0].id+'"}')
+    show_rute(STACK_HORARIO[0].id)
 }
 
 function show_rute(nombre_linea){
     let linea_seleccionada = lineas.filter(e=>e.nombre_linea===nombre_linea)
     let container_rutas = document.getElementById("vista-recorrido")
-    container_rutas.removeChild(container_rutas.firstChild)
+    container_rutas.removeChild(container_rutas.lastChild)
     let container_hijo = document.createElement("div")
     container_hijo.id="ruta"
     container_hijo.className="rutas_name"
+    console.log(linea_seleccionada)
     linea_seleccionada[0].estaciones.forEach(element=>{
         let p = document.createElement("p")
         p.textContent=element.nombre

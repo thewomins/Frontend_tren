@@ -29,8 +29,15 @@ async function onclick_search(){
         datePicker.reportValidity();
         return}
     let fecha=[selectedDate.getDate()+1,(selectedDate.getMonth()+1),selectedDate.getFullYear()].join("-")
-    let destino_estacion = (await get_estacion_by_city(destino.value)).nombre
-    let origen_estacion = (await get_estacion_by_city(origen.value)).nombre
+    let destino_estacion
+    let origen_estacion
+    try {
+        destino_estacion = (await get_estacion_by_city(destino.value.toLowerCase())).nombre
+        origen_estacion = (await get_estacion_by_city(origen.value.toLowerCase())).nombre
+    } catch (error) {
+        window.alert("No hay lineas para las ciudades seleccionadas")
+        return
+    }
     let array_final=[]
     let lista_origen= await get_linea_by_estacion( await origen_estacion)
     lista_origen.forEach(element => {
@@ -40,6 +47,6 @@ async function onclick_search(){
     sessionStorage.setItem("lineas", JSON.stringify(array_final));
     sessionStorage.setItem("fecha",fecha)
     sessionStorage.setItem("viaje",JSON.stringify({"origen":origen_estacion,"destino":destino_estacion}))
-    window.location.href = "views/user/seleccion_horario.html?"+"origen="+origen.value+"&destino="+destino.value;
+    window.location.href = "views/user/seleccion_horario.html?"+"origen="+origen.value.toLowerCase()+"&destino="+destino.value.toLowerCase();
 }
 
